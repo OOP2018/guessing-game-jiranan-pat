@@ -1,3 +1,5 @@
+import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
+
 /**
  * The base class for all number games.
  * Your guessing game should extend this class and
@@ -62,4 +64,10 @@ public class NumberGame {
     public String toString() {
 		return "You should override this method for your game";
     }
+	
+	public int getCount() {
+		return 0;
+	}
+	
+	
 }

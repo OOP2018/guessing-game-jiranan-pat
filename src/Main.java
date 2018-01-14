@@ -7,8 +7,10 @@ public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
 		int upperBound = 100;
-		NumberGame game = new SampleGame(upperBound);
-		GameConsole ui = new GameConsole( );
+		NumberGame game = new GuessingGame(upperBound);
+//		GameConsole ui = new GameConsole( );
+		GameSolver ui = new GameSolver();
+
 		int solution = ui.play( game );
 		//TODO display the answer returned by play
 		System.out.println("play() returned "+solution);
