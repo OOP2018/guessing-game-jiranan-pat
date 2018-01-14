@@ -5,6 +5,15 @@
  *
  */
 public class GameSolver {
+	
+	/**
+	 * The play method plays a game by themselves.
+	 * 
+	 * @param game is a new object of GuessingGame class
+	 * @return the secret number which is "secretNumber"
+	 */
+	
+	
 	public int play (NumberGame game) {
 		System.out.println( game.toString() );
 		int secretNum = game.getUpperBound()/2;
@@ -18,10 +27,8 @@ public class GameSolver {
 //			System.out.println(secretNum);
 			if (game.getMessage().contains("large")) {
 				secretNum = secretNum - constant/demo;
-				System.out.print(secretNum);
 			} else if (game.getMessage().contains("small")) {
 				secretNum = secretNum + constant/demo;
-				System.out.print(secretNum);
 			}
 			if (constant/demo>1) {
 				demo = demo*2;
