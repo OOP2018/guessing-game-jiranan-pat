@@ -1,5 +1,3 @@
-
-
 import java.util.Random;
 
 /**
@@ -9,10 +7,7 @@ import java.util.Random;
  * @author Jiranan Patrathamakul
  *
  */
-
-
-
-public class GuessingGame extends NumberGame {
+public class TuneGame extends NumberGame {
 	private int upperBound;
 	private int secret;
 	private int count;
@@ -23,7 +18,7 @@ public class GuessingGame extends NumberGame {
 	 * @param upperBound is the max value for the secret number (>)
 	 */
 	
-	public GuessingGame (int upperBound) {
+	public TuneGame (int upperBound) {
 		this.upperBound = upperBound;
 		this.secret = getRandomNumber(upperBound);
 		super.setMessage("I'm thinking of a number between 1 to " +upperBound);
@@ -94,6 +89,6 @@ public class GuessingGame extends NumberGame {
 	
 	@Override
     public String toString() {
-    	return "Guessing a number from 1 to 100";
+    	return "A guessing game";
     }
 }
