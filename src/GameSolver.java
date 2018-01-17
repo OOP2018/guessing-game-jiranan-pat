@@ -18,6 +18,7 @@ public class GameSolver {
 		int secretNum = (game.getUpperBound()-1)/2;
 		int constant = secretNum;
 		int denominator= 2;
+		System.out.print("\nYour answer? ");
 		
 		while (!game.guess(secretNum)) {
 			System.out.println("\n"+game.getMessage());
