@@ -6,14 +6,11 @@
 public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
-		int upperBound = 25;
+		int upperBound = 1000000;
 		NumberGame game = new TuneGame(upperBound);
 //		GameConsole ui = new GameConsole( );
 		GameSolver ui = new GameSolver();
-
 		int solution = ui.play( game );
-		//TODO display the answer returned by play
 		System.out.println("play() returned "+solution);
-		//TODO display how many guesses the user made
 	}
 }

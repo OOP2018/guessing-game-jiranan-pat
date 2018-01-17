@@ -89,6 +89,6 @@ public class TuneGame extends NumberGame {
 	
 	@Override
     public String toString() {
-    	return "A guessing game";
+    	return "A Guessing Game";
     }
 }
