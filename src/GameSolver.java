@@ -13,27 +13,23 @@ public class GameSolver {
 	 * @return the secret number which is "secretNumber"
 	 */
 	
-	
 	public int play (NumberGame game) {
 		System.out.println( game.toString() );
-		int secretNum = game.getUpperBound()/2;
+		int secretNum = (game.getUpperBound()-1)/2;
 		int constant = secretNum;
-		int demo = 2;
-		boolean incorrect = false;
+		int denominator= 2;
 		
-		while (!incorrect) {
+		while (!game.guess(secretNum)) {
 			System.out.println("\n"+game.getMessage());
 			System.out.print("\nYour answer? ");
-//			System.out.println(secretNum);
 			if (game.getMessage().contains("large")) {
-				secretNum = secretNum - constant/demo;
+				secretNum = secretNum - constant/denominator;
 			} else if (game.getMessage().contains("small")) {
-				secretNum = secretNum + constant/demo;
+				secretNum = secretNum + constant/denominator;
 			}
-			if (constant/demo>1) {
-				demo = demo*2;
+			if (constant/denominator>1) {
+				denominator = denominator*2;
 			}
-			incorrect = game.guess(secretNum);
 		}
 		System.out.println("\n"+ game.getMessage() );
 
