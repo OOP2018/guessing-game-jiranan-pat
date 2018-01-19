@@ -19,8 +19,6 @@ public class GameConsole {
 	 * @return the secret number which is "guess"
 	 */
 	
-	
-
 	/** play the game. */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);

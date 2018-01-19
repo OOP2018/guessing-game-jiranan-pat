@@ -15,26 +15,20 @@ public class GameSolver {
 	
 	public int play (NumberGame game) {
 		System.out.println( game.toString() );
-		int secretNum = (game.getUpperBound()-1)/2;
-		int constant = secretNum;
-		int denominator= 2;
-		System.out.print("\nYour answer? ");
+		int min = 1;
+		int max = game.getUpperBound();
+		int secretNum = min + (max - min)/2;
 		
 		while (!game.guess(secretNum)) {
-			System.out.println("\n"+game.getMessage());
-			System.out.print("\nYour answer? ");
-			if (game.getMessage().contains("large")) {
-				secretNum = secretNum - constant/denominator;
-			} else if (game.getMessage().contains("small")) {
-				secretNum = secretNum + constant/denominator;
-			}
-			if (constant/denominator>1) {
-				denominator = denominator*2;
+			if (game.getMessage().contains("too large")) {
+				max = secretNum -1;
+				secretNum = min + (max - min)/2;
+			} else if (game.getMessage().contains("too small")) {
+				min = secretNum + 1;
+				secretNum = min + (max - min)/2;
 			}
 		}
-		System.out.println("\n"+ game.getMessage() );
-
-	return secretNum;
+		return secretNum;
 	}
 }
 
